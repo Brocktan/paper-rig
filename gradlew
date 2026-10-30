@@ -3,7 +3,7 @@
 # distribution on first use; it does not require a system Gradle installation.
 set -eu
 APP_HOME=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-GRADLE_VERSION=9.2.1
+GRADLE_VERSION=9.5.0
 GRADLE_USER_HOME=${GRADLE_USER_HOME:-"$HOME/.gradle"}
 DIST_ROOT="$GRADLE_USER_HOME/wrapper/dists/gradle-$GRADLE_VERSION-bin/dispenser-control"
 GRADLE_HOME="$DIST_ROOT/gradle-$GRADLE_VERSION"
