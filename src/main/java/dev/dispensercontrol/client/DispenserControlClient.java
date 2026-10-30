@@ -26,7 +26,7 @@ public final class DispenserControlClient implements ClientModInitializer {
         });
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            if (!world.isClient || !world.getBlockState(hitResult.getBlockPos()).isOf(Blocks.DISPENSER)) {
+            if (!world.isClient() || !world.getBlockState(hitResult.getBlockPos()).isOf(Blocks.DISPENSER)) {
                 return ActionResult.PASS;
             }
             var screen = new DispenserControlScreen(hitResult.getBlockPos());

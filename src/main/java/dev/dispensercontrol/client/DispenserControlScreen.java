@@ -146,7 +146,7 @@ public final class DispenserControlScreen extends Screen {
     private void drawItemPreview(DrawContext context, String itemId, int x, int y) {
         Identifier id = Identifier.tryParse(itemId);
         if (id == null) return;
-        var item = Registries.ITEM.getOrEmpty(id).orElse(null);
+        var item = Registries.ITEM.getOptionalValue(id).orElse(null);
         if (item == null) return;
         context.drawItem(new ItemStack(item), x, y);
         context.drawTextWithShadow(textRenderer, itemId, x - 50, y + 20, 0xFFE0E0E0);

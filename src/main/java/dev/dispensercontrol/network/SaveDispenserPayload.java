@@ -18,10 +18,10 @@ public record SaveDispenserPayload(BlockPos pos, String name, String displayedIt
             PacketCodecs.STRING, SaveDispenserPayload::displayedItem,
             PacketCodecs.STRING, SaveDispenserPayload::actualItem,
             PacketCodecs.VAR_INT, SaveDispenserPayload::quantity,
-            PacketCodecs.BOOL, SaveDispenserPayload::enabled,
+            PacketCodecs.BOOLEAN, SaveDispenserPayload::enabled,
             PacketCodecs.STRING, SaveDispenserPayload::notes,
-            PacketCodecs.BOOL, SaveDispenserPayload::playSound,
-            PacketCodecs.BOOL, SaveDispenserPayload::showParticles,
+            PacketCodecs.BOOLEAN, SaveDispenserPayload::playSound,
+            PacketCodecs.BOOLEAN, SaveDispenserPayload::showParticles,
             SaveDispenserPayload::new
     );
 

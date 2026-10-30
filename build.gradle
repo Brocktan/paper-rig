@@ -22,9 +22,11 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
 }
 
+def modVersionValue = project.version.toString()
+
 processResources {
-    inputs.property 'version', project.version
-    filesMatching('fabric.mod.json') { expand 'version': project.version }
+    inputs.property 'version', modVersionValue
+    filesMatching('fabric.mod.json') { expand 'version': modVersionValue }
 }
 
 java {

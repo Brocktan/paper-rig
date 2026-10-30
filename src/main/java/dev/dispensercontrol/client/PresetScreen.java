@@ -1,5 +1,6 @@
 package dev.dispensercontrol.client;
 
+import net.minecraft.client.gui.Click;
 import dev.dispensercontrol.config.DispenserConfig;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -99,8 +100,11 @@ public final class PresetScreen extends Screen {
         super.render(context, mouseX, mouseY, delta);
     }
 
-    @Override public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (super.mouseClicked(mouseX, mouseY, button)) return true;
+    @Override public boolean mouseClicked(Click click, boolean doubled) {
+        if (super.mouseClicked(click, doubled)) return true;
+        double mouseX = click.x();
+        double mouseY = click.y();
+        int button = click.button();
         int left = width / 2 - 155;
         int top = height / 2 - 112;
         if (button == 0 && mouseX >= left && mouseX <= left + 310) {

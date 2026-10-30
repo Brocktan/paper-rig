@@ -17,11 +17,11 @@ public record DispenserStatePayload(BlockPos pos, String name, String displayedI
             PacketCodecs.STRING, DispenserStatePayload::displayedItem,
             PacketCodecs.STRING, DispenserStatePayload::actualItem,
             PacketCodecs.VAR_INT, DispenserStatePayload::quantity,
-            PacketCodecs.BOOL, DispenserStatePayload::enabled,
+            PacketCodecs.BOOLEAN, DispenserStatePayload::enabled,
             PacketCodecs.STRING, DispenserStatePayload::notes,
-            PacketCodecs.BOOL, DispenserStatePayload::playSound,
-            PacketCodecs.BOOL, DispenserStatePayload::showParticles,
-            PacketCodecs.BOOL, DispenserStatePayload::configured,
+            PacketCodecs.BOOLEAN, DispenserStatePayload::playSound,
+            PacketCodecs.BOOLEAN, DispenserStatePayload::showParticles,
+            PacketCodecs.BOOLEAN, DispenserStatePayload::configured,
             DispenserStatePayload::new
     );
     @Override public Id<? extends CustomPayload> getId() { return ID; }

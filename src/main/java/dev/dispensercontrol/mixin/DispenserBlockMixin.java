@@ -32,7 +32,7 @@ public abstract class DispenserBlockMixin {
 
         Identifier itemId = Identifier.tryParse(config.actualItem());
         if (itemId == null) return;
-        Item item = Registries.ITEM.getOrEmpty(itemId).orElse(net.minecraft.item.Items.AIR);
+        Item item = Registries.ITEM.getOptionalValue(itemId).orElse(net.minecraft.item.Items.AIR);
         if (item == net.minecraft.item.Items.AIR) return;
 
         ci.cancel();

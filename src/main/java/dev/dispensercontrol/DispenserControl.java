@@ -40,7 +40,7 @@ public final class DispenserControl implements ModInitializer {
                         "Read-only: operator permission and proximity to a dispenser are required.", false));
                 return;
             }
-            var current = ConfigStore.get(configKey(player.getWorld().getRegistryKey().getValue().toString(), pos));
+            var current = ConfigStore.get(configKey(player.getEntityWorld().getRegistryKey().getValue().toString(), pos));
             boolean configured = current != null;
             if (current == null) current = dev.dispensercontrol.config.DispenserConfig.DEFAULT;
             ServerPlayNetworking.send(player, DispenserStatePayload.from(pos, current, configured));
@@ -72,7 +72,7 @@ public final class DispenserControl implements ModInitializer {
             }
 
             var config = payload.toConfig().validated();
-            String key = configKey(player.getWorld().getRegistryKey().getValue().toString(), pos);
+            String key = configKey(player.getEntityWorld().getRegistryKey().getValue().toString(), pos);
             var previous = ConfigStore.get(key);
             ConfigStore.put(key, config);
             try {
@@ -95,7 +95,7 @@ public final class DispenserControl implements ModInitializer {
 
     private static boolean itemExists(String value) {
         Identifier id = Identifier.tryParse(value);
-        var item = id == null ? java.util.Optional.<net.minecraft.item.Item>empty() : Registries.ITEM.getOrEmpty(id);
+        var item = id == null ? java.util.Optional.<net.minecraft.item.Item>empty() : Registries.ITEM.getOptionalValue(id);
         return item.isPresent() && item.get() != net.minecraft.item.Items.AIR;
     }
 
