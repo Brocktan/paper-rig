@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "configurations": {
+    "minecraft:overworld|123456789": {
+      "name": "Diamond preview",
+      "displayedItem": "minecraft:diamond",
+      "actualItem": "minecraft:cobblestone",
+      "quantity": 1,
+      "enabled": true,
+      "notes": "Example: the GUI preview is a diamond; the server ejects cobblestone.",
+      "playSound": true,
+      "showParticles": true
+    }
+  }
+}

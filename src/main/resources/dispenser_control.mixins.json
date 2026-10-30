@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "dev.dispensercontrol.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["DispenserBlockMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "dispenser_control",
+  "version": "${version}",
+  "name": "Dispenser Control",
+  "description": "Server-authoritative configurable dispenser outputs with a visual preview and item picker.",
+  "authors": ["Dispenser Control contributors"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.dispensercontrol.DispenserControl"],
+    "client": ["dev.dispensercontrol.client.DispenserControlClient"]
+  },
+  "mixins": ["dispenser_control.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "=1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
